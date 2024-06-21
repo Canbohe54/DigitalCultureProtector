@@ -28,6 +28,7 @@ button {
 a {
     font-style: normal;
     text-underline: none;
+    color: inherit;
 }
 
 input {

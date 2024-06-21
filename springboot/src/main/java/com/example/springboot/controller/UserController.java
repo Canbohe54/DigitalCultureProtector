@@ -59,8 +59,8 @@ public class UserController {
     }
 
     @Operation(summary = "用户注册")
-    @PostMapping("/regist")
-    public Result regist(@RequestBody @Validated UserReq param) {
+    @PostMapping("/register")
+    public Result register(@RequestBody @Validated UserReq param) {
         param.setCreateTime(String.valueOf(new Date()));
         //账号存在性
         if (existUser(param)) {

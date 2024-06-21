@@ -27,7 +27,7 @@
 import CommonNotify from '@/components/CommonNotify.vue'
 import {onMounted, reactive, ref} from "vue";
 import api from "@/api";
-import {LoginParams} from "@/api/user";
+import {type LoginParams} from "@/api/user";
 import router from "@/router";
 
 const codeSrc: any = ref("")

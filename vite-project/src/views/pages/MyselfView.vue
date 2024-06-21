@@ -54,9 +54,6 @@
                 </div>
                 <div class="text-center margin-right bg-brown ff text-bold padding-xs cursor bg-red-hover">修改信息</div>
                 <div class="text-center margin-right bg-brown ff text-bold padding-xs cursor bg-red-hover"
-                     @click="authentication">实名认证
-                </div>
-                <div class="text-center margin-right bg-brown ff text-bold padding-xs cursor bg-red-hover"
                      @click="loginOut" v-if="myself().acc!==''">退出登录
                 </div>
               </div>
@@ -150,18 +147,8 @@ const loginOut = () => {
   router.push('/login');
 }
 
-// 实名认证
-const notifyMsg = ref('提示信息');
-const notifyType = ref(true);
 const notifyShow = ref(false);
 
-function authentication() {
-  notifyMsg.value = '该功能暂未开通'
-  notifyShow.value = true
-  setTimeout(() => {
-    notifyShow.value = false
-  }, 1500)
-}
 
 //关闭通知
 const closeNotify = () => {

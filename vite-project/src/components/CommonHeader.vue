@@ -18,7 +18,10 @@
             </div>
             <div class="padding-lr-xs text-bold-1 margin-top-sm cursor"><i class="iconfont icon-session_huihua"></i>
             </div>
-            <div class="padding-lr-xs text-bold-1 margin-top-sm cursor"><i class="iconfont icon-mine_wode"></i></div>
+            <div class="padding-lr-xs text-bold-1 margin-top-sm cursor">
+              <el-tooltip content="点击登录" placement="bottom" :disabled="isLogin">
+                <a href="/login"><i class="iconfont icon-mine_wode"></i></a>
+              </el-tooltip></div>
             <div class="margin-top-sm margin-left-sm ff text-overflow-sub text-bold">
               {{ new Date().getFullYear() }}-{{ new Date().getMonth() + 1 }}-{{ new Date().getDate() }}
               {{ "星期" + "日一二三四五六".charAt(new Date().getDay()) }}
@@ -70,6 +73,7 @@ const hasChildren = computed(() => menu.value.filter((item) => item.children))
 const state = reactive({
   selectedKeys: computed(/* @ts-ignore */() => index().selectedKeys),
 });
+const isLogin = ref(localStorage.getItem('myself'))
 
 onMounted(() => {
   activeIndex.value = router.currentRoute.value.fullPath;
